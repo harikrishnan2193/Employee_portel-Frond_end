@@ -1,0 +1,26 @@
+<div class="row">
+    <div class="col-md-6 ms-5">
+        <img src="https://img.freepik.com/free-vector/key-concept-illustration_114360-6305.jpg?w=740&t=st=1705398643~exp=1705399243~hmac=4fd5a7ca2cc37e54d3cd75e8b534113265e10288a6d473e67e8b46b4741f6fe9" alt=" no image" height="650px">
+    </div>
+    <div class="col-md-3 mt-5">
+        <form (ngSubmit)="login()" #loginform="ngForm" class="border shadow  rounded w-40 p-5 mt-4">
+            <h3 class="text-success d-flex justify-content-center mb-3 fw-bolder">Welcome</h3>
+            <div class="d-flex justify-content-center">
+                <img src="https://t3.ftcdn.net/jpg/05/17/79/88/240_F_517798849_WuXhHTpg2djTbfNf0FQAjzFEoluHpnct.jpg" alt="no image" width="90px">
+            </div>
+            <div class="mb-4 mt-5 d-flex justify-content-center">
+                <input class="form-control w-100 rounded-pill" type="text"  placeholder="Plese enter youer email" email required [(ngModel)]="email" name="email" #useremail ="ngModel">
+            </div>
+            <span *ngIf="useremail.invalid && useremail.touched" class="text-danger">⚠️Invalid email Id</span>
+            <div class="mb-4 d-flex justify-content-center ">
+                <input class="form-control w-100 rounded-pill mt-3" type="password"  placeholder="Plese enter youer password" required pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*\d).{4,}$" [(ngModel)]="password"  name="password" #userpassword="ngModel">
+            </div>
+            <span *ngIf="userpassword.invalid && userpassword.touched" class="text-danger mb-3">⚠️Invalid password</span>
+            <div class="mt-4 d-flex justify-content-center ">
+                <button type="submit" [disabled]="loginform.invalid" class="btn btn-success w-100 rounded-pill">Login</button> 
+               
+            </div>
+        </form>
+    </div>
+    <div class="col-md-3"></div>
+</div>
